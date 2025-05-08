@@ -1,0 +1,27 @@
+# Configuration for stock ETL process
+
+# Database settings
+database:
+  url: "postgresql://user:password@localhost/stocks_db"
+  schema: "public"
+  
+# Input data settings
+input:
+  directory: "/path/to/csv/files"
+  file_pattern: "*.csv"
+  
+# Processing settings
+processing:
+  chunk_size: 100000  # Number of rows to process at once
+  max_workers: 3      # Number of parallel processes (leave 1 CPU for system)
+  
+# Logging settings
+logging:
+  level: "INFO"       # Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  log_file: "etl.log" # Optional log file (comment out to log to console only)
+  
+# Checkpoint settings
+checkpoint:
+  enabled: true       # Enable checkpointing for resume capability
+  interval: 2         # Save checkpoint every N files
+  file: "etl_checkpoint.json"
