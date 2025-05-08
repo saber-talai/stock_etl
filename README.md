@@ -107,6 +107,13 @@ Additional options:
 - UPSERTs are used to handle potential duplicates
 - Checkpointing allows for resuming interrupted operations
 
+## Memory Management
+
+- Uses memory-efficient data structures
+- Processes one file at a time in parallel workers
+- Frees memory after processing each chunk
+- Uses chunking to avoid loading entire files at once
+  
 ## Error Handling
 
 - Input validation ensures data quality
